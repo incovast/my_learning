@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./",
+
+    "target": "es6",
+    "module": "es6",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+
+    "sourceMap": false,
+    "declaration": false,
+    "skipLibCheck": true,
+
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+
+  "include": ["**/*.ts"],
+  "exclude": []
+}

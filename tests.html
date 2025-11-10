@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>API Client Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Users from Node API</h2>
+    <button id="loadUsers">Load Users</button>
+    <ul id="userList"></ul>
+
+    <script>
+      $("#loadUsers").click(function () {
+        $.ajax({
+          url: "http://localhost:3000/api/main", // ✅ full API URL
+          method: "GET",
+          success: function (data) {
+            $("#userList").empty();
+            data.forEach((user) => {
+              $("#userList").append(
+                `<li>${user.first_name} ${user.last_name} (${user.age})</li>`
+              );
+            });
+          },
+          error: function (err) {
+            alert("Failed to load users: " + err.statusText);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript + Tailwind Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg p-6 rounded-xl text-center">
+      <h1 class="text-2xl font-bold text-blue-600 mb-3">
+        TypeScript + Tailwind
+      </h1>
+      <p id="message" class="text-gray-600 mb-4">Waiting for script...</p>
+      <button
+        id="btn"
+        class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition"
+      >
+        Click Me
+      </button>
+    </div>
+
+    <!-- Load TypeScript compiler -->
+    <script src="https://cdn.jsdelivr.net/npm/typescript@5.3.3/lib/typescript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tslib@2.6.2/tslib.min.js"></script>
+
+    <!-- Inline script with modern JS (like TS) -->
+    <script type="module">
+      // This is pure JS, but we’ll write TypeScript-style code
+      const btn = document.getElementById("btn") as HTMLButtonElement;
+      const msg = document.getElementById("message") as HTMLParagraphElement;
+
+      let count: number = 0;
+
+      btn.addEventListener("click", () => {
+        count++;
+        msg.textContent = `You clicked ${count} times`;
+      });
+    </script>
+  </body>
+</html>
